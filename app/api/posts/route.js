@@ -1,4 +1,3 @@
-
 import { NextResponse } from "next/server";
 import Post from "../models/posts";
 import connectToDatabase from "../lib/mongodb";
@@ -10,8 +9,7 @@ export async function GET() {
 }
 
 export async function POST(req) {
-  await connectToDatabase
-    ();
+  await connectToDatabase();
   const { Name, Email, Address, Phno } = await req.json();
 
   if (!Name || !Email) {
@@ -23,6 +21,7 @@ export async function POST(req) {
 
   return NextResponse.json(newPost, { status: 201 });
 }
+
 export async function PUT(req) {
   await connectToDatabase();
   const { _id, Name, Email, Address, Phno } = await req.json();
@@ -44,7 +43,7 @@ export async function PUT(req) {
 
     return NextResponse.json(updatedPost, { status: 200 });
   } catch (error) {
+    console.error("Error updating post:", error);  // Logging the error to fix lint warning
     return NextResponse.json({ error: "An error occurred while updating the post" }, { status: 500 });
   }
 }
-

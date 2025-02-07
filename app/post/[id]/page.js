@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const PostDetail = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <h2 className="text-3xl font-bold">{post.title}</h2>
-      <img className="w-full h-60 object-cover my-4" src={post.imageUrl} alt="Post Image" />
+      <Image className="w-full h-60 object-cover my-4" src={post.imageUrl} alt="Post Image" />
       <p className="text-gray-700">{post.description}</p>
     </div>
   );

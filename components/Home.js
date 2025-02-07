@@ -1,6 +1,7 @@
 "use client";
 
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
@@ -86,7 +87,7 @@ const Home = () => {
         ) : (
           filteredPosts.map((item) => (
             <div key={item.id} className="border border-gray-400 p-4 cursor-pointer" onClick={() => handlePostClick(item.id)}>
-              <img
+              <Image
                 className="w-full h-48 object-cover mb-4"
                 src={item.imageUrl}
                 alt="Post Image"
