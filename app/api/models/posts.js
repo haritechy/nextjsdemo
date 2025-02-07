@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { type } from "os";
-
 const PostSchema = new mongoose.Schema(
   {
     Name: { type: String, required: true },

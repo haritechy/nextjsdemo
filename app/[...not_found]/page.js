@@ -7,9 +7,7 @@ const Custom404 = () => {
       <h2 className="text-4xl font-bold mb-4">Oops! Page Not Found – 404</h2>
       <p className="mb-6 text-lg text-gray-600">The page you're looking for doesn't exist.</p>
       <Link href="/" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-   
-          Go back to Home
-       
+      Go back to Home    
       </Link>
     </div>
   );

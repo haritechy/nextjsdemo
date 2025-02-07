@@ -5,8 +5,7 @@ export default function Main() {
   
   return (
     <>
-  
-      <Home />
+   <Home />
     </>
 
   );

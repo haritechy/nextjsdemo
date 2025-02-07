@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 
-const page = () => {
+const Page = () => {
   const [details, setDetails] = useState({
     Name: "",
     Email: "",
@@ -9,7 +9,7 @@ const page = () => {
     Address: "",
   });
 
-  const [message,serMessage]=useState("")
+  const [message, serMessage] = useState("")
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setDetails((prevDetails) => ({
@@ -20,7 +20,7 @@ const page = () => {
 
 
   const PostContact = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const postDetail = {
       Name: details.Name,
       Email: details.Email,
@@ -44,16 +44,16 @@ const page = () => {
 
         setDetails({
 
-          Name:"",
-          Email:"",
-          Address:"",
-          Phno:"",
+          Name: "",
+          Email: "",
+          Address: "",
+          Phno: "",
         })
-serMessage("conatct Post Succefull")
-   
+        serMessage("conatct Post Succefull")
+
       } else {
         console.log("Post failed");
-      
+
       }
     } catch (error) {
       console.log("Error:", error);
@@ -104,15 +104,13 @@ serMessage("conatct Post Succefull")
             rows="4"
           />
         </div>
-
         <button type="submit" className="bg-blue-500 text-white p-3 text-sm border rounded-lg" onClick={PostContact}>
           Submit
         </button>
-
-      {message && <p className="text-center text-red-500"> {message}</p>}
+       {message && <p className="text-center text-red-500"> {message}</p>}
       </form>
     </main>
   );
 };
 
-export default page;
+export default Page;
